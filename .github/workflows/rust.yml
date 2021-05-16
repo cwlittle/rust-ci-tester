@@ -18,6 +18,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build
       run: cargo build --verbose
+    - name: Install Coverage Tooling
+      run: cargo install cargo-tarpaulin
     - name: Run Coverage
-    - run: cargo install cargo-tarpaulin
-    - run: cargo tarpaulin -v
+      run: cargo tarpaulin -v
