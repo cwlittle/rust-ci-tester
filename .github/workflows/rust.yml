@@ -10,14 +10,27 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  CI:
-
+  Build:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout 
+      uses: actions/checkout@v2
     - name: Build
       run: cargo build --verbose
+      
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Test
+      run: cargo test --verbose
+      
+  Coverage:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
     - name: Install Coverage Tooling
       run: cargo install cargo-tarpaulin
     - name: Run Coverage
