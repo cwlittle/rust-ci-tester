@@ -19,6 +19,9 @@ jobs:
       uses: actions-rs/toolchain@v1
       with:
           toolchain: nightly
+          override: true
+    - run: rustup --version
+    - name: Get version
     - name: Build
       uses: actions-rs/cargo@v1
       with:
