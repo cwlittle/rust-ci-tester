@@ -21,8 +21,15 @@ pub fn add_them(x: i32, y:i32) -> i32 {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn it_works() {
-        assert_eq!(add_them(2, 2), 5);
+        assert_eq!(add_them(2, 2), 4);
     }
+
+    #[test]
+    fn forty_two() {
+        assert_eq!(add_them(3, 2), 42);
+    }
+
 }
