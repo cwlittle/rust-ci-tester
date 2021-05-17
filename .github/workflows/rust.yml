@@ -21,4 +21,8 @@ jobs:
     - name: Install Coverage Tooling
       run: cargo install cargo-tarpaulin
     - name: Run Coverage
-      run: cargo tarpaulin -v
+      run: cargo tarpaulin -v --out Xml
+    - name: Upload to codecov.io
+      uses: codecov/codecov-action@v1
+      with:
+          fail_ci_if_error: true
