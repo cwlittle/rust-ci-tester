@@ -22,3 +22,7 @@ jobs:
       run: cargo install cargo-tarpaulin
     - name: Run Coverage
       run: cargo tarpaulin -v
+    - name: Upload to codecov.io
+      uses: codecov/codecov-action@v1
+      with:
+          fail_ci_if_error: true
