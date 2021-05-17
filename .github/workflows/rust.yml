@@ -44,18 +44,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions-rs/checkout@v2
     - name: Use Nightly
       uses: actions-rs/toolchain@v1
       with:
           toolchain: nightly
     - name: Install Coverage Tooling
-      uses: actions/cargo@v1
+      uses: actions-rs/cargo@v1
       with:
           command: install
           args: cargo-tarpaulin
     - name: Run Coverage
-      uses: actions/cargo@v1
+      uses: actions-rs/cargo@v1
       with:
           command: tarpaulin
           args: -v --out Xml
